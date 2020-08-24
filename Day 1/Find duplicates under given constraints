@@ -1,0 +1,31 @@
+https://practice.geeksforgeeks.org/problems/find-duplicates-under-given-constraints/0
+
+Correct Answer.Correct Answer
+Execution Time:0.21
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class GFG
+ {
+	public static void main (String[] args)
+	 {
+	 Scanner sc = new Scanner(System.in);
+	 int t = sc.nextInt();
+	 while(t-->0){
+	     int A[] = new int[10];
+	     for(int i=0;i<10;i++){
+	         A[i]=sc.nextInt();
+	     }
+	     if(A[5]==A[4]){
+	         System.out.println(A[5]);
+	     }
+	     else if(A[5]==A[6]){
+	         System.out.println(A[5]);
+	     }
+	     else{
+	         System.out.println(A[4]);
+	     }
+	 }
+	 }
+}
