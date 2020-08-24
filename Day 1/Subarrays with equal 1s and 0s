@@ -1,0 +1,31 @@
+https://practice.geeksforgeeks.org/problems/count-subarrays-with-equal-number-of-1s-and-0s-1587115620/1
+
+
+Your program took more time than expected.Time Limit Exceeded
+Expected Time Limit < 4.504sec
+Hint : Please optimize your code and submit again.
+
+
+static int countSubarrWithEqualZeroAndOne(int arr[], int N)
+    {
+        int x=0;
+        int y=0;
+        int num=0;
+        for(int i=0;i<N-1;i++){
+            x=0;
+            y=0;
+            for(int j=i;j<N;j++){
+                if(arr[j]==1){
+                    x++;    
+                }
+                if(arr[j]==0){
+                    y++;
+                }
+                if(x==y){
+                    num+=1;
+                }
+                //System.out.println(i+"|"+j+"|NUM:"+num);
+            }
+        }
+        return num;
+    }
