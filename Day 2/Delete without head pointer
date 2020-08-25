@@ -1,0 +1,11 @@
+ https://practice.geeksforgeeks.org/problems/delete-without-head-pointer/1
+ 
+Correct Answer.Correct Answer
+Execution Time:2.56
+ 
+ void deleteNode(Node node)
+    {
+        node.data = node.next.data;
+        node.next = node.next.next;
+           
+    }
