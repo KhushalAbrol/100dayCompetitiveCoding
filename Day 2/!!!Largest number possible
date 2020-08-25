@@ -1,0 +1,55 @@
+lems/largest-number-possible/0/
+
+Wrong Answer. !!!Wrong Answer
+
+Possibly your code doesn't work correctly for multiple test-cases (TCs).
+
+The first test case where your code failed:
+
+Input:
+42 467
+
+Its Correct output is:
+-1
+
+And Your Code's output is:
+999999999999999999999999999999999999999999
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class GFG
+ {
+	public static void main (String[] args)
+	 {
+	    Scanner sc = new Scanner(System.in);
+	    int t = sc.nextInt();
+	    while(t-->0){
+	        int n = sc.nextInt();
+	        int s = sc.nextInt();
+	        int res[] = new int[n];
+	        if (s == 0) 
+        { 
+            System.out.print(n == 1 ? "0" : "-1");  
+        } 
+	        else{
+	           // System.out.println("else");
+    	        for(int i=0;i<n;i++){
+    	           // System.out.println("sum:"+s+"||n:"+n);
+    	            if(s>9){
+    	                res[i]=9;
+    	                s-=9;
+    	            }
+    	            else{
+    	                res[i]=s;
+    	                s=0;
+    	            }
+    	        }
+    	        for(int i=0;i<n;i++){
+    	           System.out.print(res[i]); 
+    	        }
+    	        System.out.println();
+	        }
+	    }
+	 }
+}
