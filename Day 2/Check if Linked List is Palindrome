@@ -1,0 +1,34 @@
+https://practice.geeksforgeeks.org/problems/check-if-linked-list-is-pallindrome/1/
+
+Correct Answer.Correct Answer
+Execution Time:1.26
+
+boolean isPalindrome(Node head) 
+    {
+        Node temp = head;
+        int len = 0;
+        Stack<Integer> s = new Stack<Integer>();
+        while(temp!=null){
+            len++;
+            temp=temp.next;
+        }
+        temp = head;
+        for(int i=0;i<len/2;i++){
+            s.push(temp.data);
+            temp=temp.next;
+        }
+        if(len%2!=0) temp=temp.next;
+        for(int i=(len+1)/2;i<len;i++){
+            if(temp!=null){
+                if(s.peek()==temp.data)
+                    s.pop();
+                temp=temp.next;
+            }
+            else return false;
+        }
+        if(s.isEmpty()){
+            return true;
+        }
+        else
+            return false;
+    }    
