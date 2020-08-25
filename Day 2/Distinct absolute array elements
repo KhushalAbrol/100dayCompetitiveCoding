@@ -1,0 +1,33 @@
+https://practice.geeksforgeeks.org/problems/distinct-absolute-array-elements/0
+
+Correct Answer.Correct Answer
+Execution Time:0.4
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class GFG
+ {
+	public static void main (String[] args)
+	 {
+	    Scanner sc = new Scanner(System.in);
+	    int t = sc.nextInt();
+	    while(t-->0){
+	        int n = sc.nextInt();
+	        int A[] = new int[n];
+	        for(int i=0;i<n;i++){
+	            A[i] = sc.nextInt();
+	        }
+	        System.out.println(count(A, n));
+	    }
+	 }
+	 
+	 public static int count(int A[], int n){
+	     Set<Integer> s = new HashSet<Integer>();
+	     
+	     for(int i = 0;i<n;i++){
+	         s.add(Math.abs(A[i]));
+	     }
+	     return s.size();
+	 }
+}
