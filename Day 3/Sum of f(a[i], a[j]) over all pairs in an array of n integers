@@ -1,0 +1,32 @@
+https://practice.geeksforgeeks.org/problems/sum-of-fai-aj-over-all-pairs-in-an-array-of-n-integers/0
+
+Correct Answer.Correct Answer
+Execution Time:0.26
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class GFG
+ {
+	public static void main (String[] args)
+	 {
+	    Scanner sc = new Scanner(System.in);
+	    int t = sc.nextInt();
+	    while(t-->0){
+	        int n = sc.nextInt();
+	        int A[] = new int[n];
+	        int s=0;
+	        for(int i=0;i<n;i++){
+	            A[i]=sc.nextInt();
+	        }
+	        for(int i=0;i<n-1;i++){
+	            for(int j=i+1;j<n;j++){
+	                if(A[j]-A[i]>1 || A[j]-A[i]<-1){
+	                    s+=A[j] - A[i];
+	                }
+	            }
+	        }
+	        System.out.println(s);
+	    }
+	 }
+}
