@@ -1,0 +1,18 @@
+https://practice.geeksforgeeks.org/problems/check-for-bst/1
+
+Runtime Error:
+Runtime ErrorException in thread "main" java.lang.NullPointerException
+	at Tree.isBST(Tree.java:133)
+	at Tree.isBST(Tree.java:139)
+	at GfG.main(Tree.java:97)
+
+boolean isBST(Node root)
+        {
+            if(root.data=>root.right.data)
+                return false;
+            if(root.data<=root.left.data)
+                return false;
+            if(root.left ==null && root.right==null)
+                return true;
+            else return( isBST(root.left) && isBST(root.right));
+        }
