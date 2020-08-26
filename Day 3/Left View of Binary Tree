@@ -1,0 +1,25 @@
+ https://practice.geeksforgeeks.org/problems/left-view-of-binary-tree/1
+ 
+ Wrong Answer. !!!Wrong Answer
+
+Possibly your code doesn't work correctly for multiple test-cases (TCs).
+
+The first test case where your code failed:
+
+Input:
+3 4 N 2 7 N 2 1 N 9 1
+
+Its Correct output is:
+3 4 2 2 9
+
+And Your Code's output is:
+3 4 2
+ 
+ void leftView(Node root)
+    {
+        System.out.print(root.data+" ");
+        if(root.left!=null){
+            leftView(root.left);
+        }
+        return;
+    }
