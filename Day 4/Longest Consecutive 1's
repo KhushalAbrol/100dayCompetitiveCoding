@@ -1,0 +1,45 @@
+https://practice.geeksforgeeks.org/problems/longest-consecutive-1s/0
+
+Correct Answer.Correct Answer
+Execution Time:0.42
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class GFG
+ {
+	public static void main (String[] args)
+	 {
+	    Scanner sc = new Scanner(System.in);
+	    int t = sc.nextInt();
+	    while(t-->0){
+	        int n = sc.nextInt();
+            String s="";
+	        while(n!=0){
+	            s += Integer.toString(n%2);
+	            n/=2;
+	           // System.out.println(s);
+	        }
+	        int len = s.length();
+	        int x = 0;
+	        int y=0;
+	        for(int i=0;i<len;i++){
+	            if(s.charAt(i)=='1'){
+	                y++;
+	               // System.out.println("Y:"+y);
+	            }
+	            else{
+	                if(y>x){
+	                   // System.out.println("Y||"+y+"||X"+x);
+	                    x=y;
+	                }
+	                y=0;
+	            }
+	            if(i==len-1 && y>x){
+	                x=y;
+	            }
+	        }
+	        System.out.println(x);
+	    }
+	 }
+}
