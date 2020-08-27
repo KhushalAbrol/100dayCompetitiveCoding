@@ -1,0 +1,26 @@
+https://practice.geeksforgeeks.org/problems/number-is-sparse-or-not/0/
+
+Correct Answer.Correct Answer
+Execution Time:0.28
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class GFG
+ {
+	public static void main (String[] args)
+	 {
+	    Scanner sc = new Scanner(System.in);
+	    int t =sc.nextInt();
+	    while(t-->0){
+	        int n = sc.nextInt();
+	        n = n & (n>>1);
+	        if( n== 0){
+	            System.out.println("1");
+	        }
+	        else{
+	            System.out.println("0");
+	        }
+	    }
+	 }
+}
