@@ -1,0 +1,15 @@
+https://practice.geeksforgeeks.org/problems/left-view-of-binary-tree/1
+
+Correct Answer.Correct Answer
+Execution Time:0.89
+
+void leftView(Node root)
+    {
+        if(root==null) return;
+        System.out.print(root.data+" ");
+        if(root.left!=null){
+            leftView(root.left);
+        }else if(root.right!=null){
+            leftView(root.right);
+        }
+    }
