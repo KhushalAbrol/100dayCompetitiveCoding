@@ -29,3 +29,31 @@ static int countSubarrWithEqualZeroAndOne(int arr[], int N)
         }
         return num;
     }
+--------------------------------------------------------------------------------------
+Your program took more time than expected.Time Limit Exceeded
+Expected Time Limit < 4.504sec
+Hint : Please optimize your code and submit again.
+
+
+static int countSubarrWithEqualZeroAndOne(int A[], int N)
+    {
+        for(int i=0;i<N;i++){
+            if(A[i]==0){
+                A[i]=-1;
+            }
+        }
+        int res=0;
+        int sum=0;
+        for(int i=0;i<N-1;i++){
+            sum=0;
+            for(int j=i;j<N;j++){
+                sum+=A[j];
+                // System.out.println(A[j]);
+                if(sum==0){
+                    res++;
+                    // System.out.println(res+"|res|sum"+sum);
+                }
+            }
+        }
+        return res;
+    }
