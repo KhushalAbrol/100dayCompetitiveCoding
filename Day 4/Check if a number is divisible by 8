@@ -1,0 +1,38 @@
+https://practice.geeksforgeeks.org/problems/check-if-a-number-is-divisible-by-8/0/
+
+Correct Answer.Correct Answer
+Execution Time:0.44
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class GFG
+ {
+	public static void main (String[] args)
+	 {  
+	       Scanner sc = new Scanner(System.in);
+	       int t = sc.nextInt();
+	       sc.nextLine();
+	       while(t-->0){
+	           String s = sc.nextLine();
+	           if("".equals(s)) System.out.println("-1");
+	           else{
+    	           //
+    	           String num="";
+    	           int len = s.length();
+    	           //System.out.println(len+"len");
+    	           if(len>3){
+    	               for(int i=len-3;i<len;i++){
+        	               num+=s.charAt(i);
+        	               //System.out.println(num+"Num||s.i"+s.charAt(i));
+    	               }
+    	           }else{
+    	               num=s;
+    	           }
+    	           int n = Integer.parseInt(num);
+    	           if(n%8==0) System.out.println("1");
+    	           else System.out.println("-1");
+	           }
+	       }
+	 }
+}
