@@ -1,0 +1,37 @@
+https://practice.geeksforgeeks.org/problems/largest-number-possible/0
+
+Correct Answer.Correct Answer
+Execution Time:0.46
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class GFG
+ {
+	public static void main (String[] args)
+	 {
+	    Scanner sc = new Scanner(System.in);
+	    int t = sc.nextInt();
+	    while(t-->0){
+	        int n = sc.nextInt();
+	        int s = sc.nextInt();
+	        String res="";
+	        if(s>n*9 || n==0 || (s==0 && n>1)){
+	            System.out.println(-1);
+	        }
+	        else{
+    	        for(int i=0;i<n;i++){
+    	            if(s>9){
+    	                res += "9";
+    	                s+=-9;
+    	            }
+    	            else{
+    	                res += Integer.toString(s);
+    	                s=0;
+    	            }
+    	        }
+    	        System.out.println(res);
+	        }
+	    }
+	 }
+}
