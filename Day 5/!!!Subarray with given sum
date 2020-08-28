@@ -1,0 +1,49 @@
+https://practice.geeksforgeeks.org/problems/subarray-with-given-sum/0/
+
+
+Your program took more time than expected.Time Limit Exceeded
+Expected Time Limit < 5.02sec
+Hint : Please optimize your code and submit again.
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class GFG
+ {
+	public static void main (String[] args)
+	 {
+	    Scanner sc = new Scanner(System.in);
+	    int t = sc.nextInt();
+	    while(t-->0){
+	        int n = sc.nextInt();
+            int s = sc.nextInt();
+            int A[] = new int[n];
+            for(int i=0;i<n;i++){
+                A[i] = sc.nextInt();
+            }
+            int sum=0;
+            boolean found=false;
+	        for(int i =0;i<n;i++){
+	            sum=A[i];
+	            if(sum==s){
+	                System.out.println(i+1+" "+(i+1));
+	                found=true;  
+	            }
+	            else{
+	               for(int j=i+1;j<n;j++){
+    	                sum+=A[j];
+    	                if(sum==s ){
+    	                    found=true;
+    	                    System.out.println(i+1+" "+(j+1));
+    	                    break;
+    	                }
+    	            }
+    	            if(found){
+    	                break;
+    	            } 
+	            }
+	        }
+	        if(!found) System.out.println("-1");
+	    }
+	 }
+}
