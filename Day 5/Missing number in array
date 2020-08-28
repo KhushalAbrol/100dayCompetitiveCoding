@@ -1,5 +1,35 @@
 https://practice.geeksforgeeks.org/problems/missing-number-in-array/0/
 
+2 Solutions:
+
+Correct Answer.Correct Answer
+Execution Time:1.44
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class GFG
+ {
+	public static void main (String[] args)
+	 {
+	    Scanner sc = new Scanner(System.in);
+	    int t = sc.nextInt();
+	    while(t-->0){
+	        int n = sc.nextInt(); 
+	        sc.nextLine();
+	        String str = sc.nextLine();
+	        String [] A = str.split(" ");
+	        int ExpSum = n*(n+1)/2;
+	        int sum=0;
+	        for(int i=0;i<n-1;i++){
+	            sum+=Integer.parseInt(A[i]);
+	        }
+	        System.out.println(ExpSum-sum);
+	    }
+	 }
+}
+
+---------------------------------------------------------------------------------------
 Correct Answer.Correct Answer
 Execution Time:3.27
 
