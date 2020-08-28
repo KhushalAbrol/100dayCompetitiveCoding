@@ -1,0 +1,33 @@
+//https://practice.geeksforgeeks.org/problems/move-all-zeroes-to-end-of-array/0/
+
+//Your program took more time than expected.Time Limit Exceeded
+//Expected Time Limit < 1.816sec
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class GFG
+ {
+	public static void main (String[] args)
+	 {
+	    Scanner sc = new Scanner(System.in);
+	    int t=sc.nextInt();
+	    while(t-->0){
+	        int n=sc.nextInt();
+	        int A[] = new int[n];
+	        int B[] = new int[n];
+	        int j=0;
+	        for(int i=0;i<n;i++){
+	            A[i]=sc.nextInt();
+	            if(A[i]!=0){
+	                B[j]=A[i];
+	                j++;
+	            }
+	        }
+	        for(int i=0;i<n;i++){
+	            System.out.print(B[i]+" ");
+	        }
+	        System.out.println();
+	    }
+	 }
+}
