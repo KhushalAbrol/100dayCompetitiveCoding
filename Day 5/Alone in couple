@@ -1,0 +1,40 @@
+https://practice.geeksforgeeks.org/problems/alone-in-couple/0/
+
+Correct Answer.Correct Answer
+Execution Time:0.31
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class GFG
+ {
+	public static void main (String[] args)
+	 {
+	    Scanner sc= new Scanner(System.in);
+	    int t=sc.nextInt();
+	    while(t-->0){
+	        int n = sc.nextInt();
+	        int A[] = new int[n];
+	        boolean B[] = new boolean[n];
+	        for(int i=0;i<n;i++){
+	            A[i]=sc.nextInt();
+	            B[i] = true;
+	        }
+	        
+	        for(int i=0;i<n-1;i++){
+	            for(int j=i+1;j<n;j++){
+	                if(A[i]==A[j] && B[i]==true){
+	                    B[i]=false;
+	                    B[j]=false;
+	                }
+	            }
+	        }
+	        for(int i=0;i<n;i++){
+	            if(B[i]){
+	                System.out.println(A[i]);
+	            }
+	        }
+	        for(int i=0;i<n;i++){A[i]=0;}
+	    }
+	 }
+}
