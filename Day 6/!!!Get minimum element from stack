@@ -1,0 +1,39 @@
+//https://practice.geeksforgeeks.org/problems/get-minimum-element-from-stack/1/
+
+//Runtime Error: Runtime ErrorException in thread "main" java.lang.NullPointerException at GfG.push(File.java:70) at Get_Min_From_Stack.main(File.java:23)
+
+class GfG
+{
+    int minEle=-1;
+    Stack<Integer> s;
+    boolean b = true;
+
+    /*returns min element from stack*/
+    int getMin()
+    {
+        
+        return minEle;
+    }
+    
+    /*returns poped element from stack*/
+    int pop()
+    {
+        if(s.isEmpty()) return -1;
+	    return  s.pop();	
+    }
+
+    /*push element x into the stack*/
+    void push(int x)
+    {
+    	if(s.isEmpty()){
+    	    s.push(x);
+    	    minEle = s.peek();
+    	}else{
+    	    s.push(x);
+    	    if(minEle>s.peek()){
+    	        minEle = s.peek();
+    	    }
+    	}
+    }	
+}
+
