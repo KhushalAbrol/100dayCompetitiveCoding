@@ -1,0 +1,35 @@
+/*https://practice.geeksforgeeks.org/problems/single-number/0/
+
+Correct Answer.Correct Answer
+Execution Time:2.18
+
+*/
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class GFG
+ {
+	public static void main (String[] args)
+	 {
+	    Scanner sc = new Scanner(System.in);
+	    int t = sc.nextInt();
+	    while(t-->0){
+	        int n = sc.nextInt();
+	        int A[] = new int[n];
+	        int a = 0;
+	        for(int i=0;i<n;i++){
+	            A[i]=sc.nextInt();
+	        }
+	        for(int i=0;i<n;i++){
+	            a=a^A[i];
+	        }
+	        System.out.println(a);
+	    }
+	 }
+}
+/*As xor operates gives one when both the binary bits are different from each other ;
+
+now think, when two equal numbers are operated by xor operator all the binary bits of the resultant no will turn 0 because both the numbers will have exactly same bits;
+
+therefore whenever a same no will be xor operated even no of times the resultant will turn out to be zero but when odd no of times the resultant will be the number itself as xor operation with zero gives the no itself ;*/
