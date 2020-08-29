@@ -1,0 +1,79 @@
+//https://practice.geeksforgeeks.org/problems/maximum-value-in-a-bitonic-array/0/
+//Correct Answer.Correct Answer Execution Time:3.38
+
+//O(n)||
+//    \/
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class GFG
+ {
+	public static void main (String[] args)
+	 {
+	    Scanner sc = new Scanner(System.in);
+	    int t = sc.nextInt();
+	    while(t-->0){
+	        int n = sc.nextInt();
+	        int A[] = new int[n];
+	        boolean found = false;
+	        for(int i=0;i<n;i++){
+	            A[i]=sc.nextInt();
+	        }
+	        for(int i=0;i<n-1;i++){
+	            if(A[i]>A[i+1]){
+	                System.out.println(A[i]);
+	                found = true;
+	                break;
+	            }
+	        }
+	        if(!found){
+	            System.out.println(A[n-1]);
+	        }
+	    }
+	 }
+}
+
+------------------------------------------------
+//Correct Answer.Correct Answer Execution Time:3.37
+
+while(t-->0){
+	        int n = sc.nextInt();
+	        int A[] = new int[n];
+	        boolean found = false;
+	        int max = -1;
+	        for(int i=0;i<n;i++){
+	            A[i]=sc.nextInt();
+	            if(A[i]>max){
+	                max = A[i];
+	            }
+	        }
+	        System.out.println(max);
+
+------------------------------------------------------------------------------
+//Correct Answer.Correct Answer Execution Time:1.9
+
+public static void main (String[] args)
+	 {
+	    Scanner sc = new Scanner(System.in);
+	    int t = sc.nextInt();
+	    while(t-->0){
+	        int n = sc.nextInt();
+	        int A[] = new int[n];
+	        boolean found = false;
+	        int max = -1;
+	        for(int i=0;i<n;i++){
+	            A[i]=sc.nextInt();
+	        }
+	        System.out.println(max(A, 0, n-1));
+	    }
+	 }
+	 static int max(int[] A, int s, int e){
+	     if(s==e) return A[s];
+	     int mid = (s+e)/2;
+	     if(A[mid]>A[mid+1]){
+	         return max(A, s, mid);
+	     }else{
+	         return max(A, mid+1 ,e);
+	     }
+	 }
