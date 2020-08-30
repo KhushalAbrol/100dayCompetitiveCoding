@@ -3,7 +3,7 @@
 Correct Answer.Correct Answer
 Execution Time:0.33
 */
-
+// Using Array
 import java.util.*;
 import java.lang.*;
 import java.io.*;
@@ -25,6 +25,54 @@ class GFG
 	        for(int i=0;i<10001;i++){
 	            if(B[A[i]] ==1){
 	                System.out.println(A[i]);
+	                break;
+	            }
+	        }
+	    }
+	 }
+}
+----------------------------------------------------
+
+
+// Using HashMap
+
+
+/*https://practice.geeksforgeeks.org/problems/find-unique-element/0
+
+Correct Answer.Correct Answer
+Execution Time:0.32
+*/
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class GFG
+ {
+	public static void main (String[] args)
+	 {
+	    Scanner sc = new Scanner(System.in);
+	    int t = sc.nextInt();
+	    while(t-->0){
+	        int n = sc.nextInt();
+	        int k = sc.nextInt();
+	        int[] A = new int[n];
+	        for(int i=0;i<n;i++){
+	            A[i] = sc.nextInt();
+	        }
+	        Map<Integer, Integer> m = new HashMap<Integer, Integer>();
+	        int count;
+	        
+	        for(int i=0;i<n;i++){
+	            if(m.containsKey(A[i])){
+	                count = m.get(A[i])+1;
+	                m.put(A[i], count);
+	            }else{
+	                m.put(A[i], 1);
+	            }
+	        }
+	        for(int i: m.keySet()){
+	            if(m.get(i)==1){
+	                System.out.println(i);
 	                break;
 	            }
 	        }
