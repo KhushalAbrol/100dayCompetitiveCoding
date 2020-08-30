@@ -4,6 +4,9 @@ https://practice.geeksforgeeks.org/problems/difference-between-highest-and-lowes
 Correct Answer.Correct Answer
 Execution Time:1.91
 */
+
+//using Arrays
+
 import java.util.*;
 import java.lang.*;
 import java.io.*;
@@ -33,6 +36,58 @@ class GFG
 	        }
 	        System.out.println(B[10000]-min);
 	        
+	    }
+	 }
+}
+----------------------------------------------------------------------------------
+/*
+https://practice.geeksforgeeks.org/problems/difference-between-highest-and-lowest-occurrence/0/
+
+Correct Answer.Correct Answer
+Execution Time:1.56
+*/
+
+// using hashmap
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class GFG
+ {
+	public static void main (String[] args)
+	 {
+	    Scanner sc = new Scanner(System.in);
+	    int t = sc.nextInt();
+	    while(t-->0){
+	        int n = sc.nextInt();
+	        int A[] = new int[n];
+	        for(int i=0;i<n;i++){
+	            A[i]=sc.nextInt();
+	        }
+	        Map<Integer, Integer> m = new HashMap<Integer, Integer>();
+	        int count;
+	        for(int i=0;i<n;i++){
+	            if(m.containsKey(A[i])){
+	                count = m.get(A[i])+1;
+	                m.put(A[i], count);
+	            }
+	            else{
+	                m.put(A[i], 1);
+	            }
+	        }
+	        int min=Integer.MAX_VALUE;
+	        int max=-1;
+	        for(int i: m.keySet()){
+	            if(m.get(i)<min){
+	                min=m.get(i);
+	               // System.out.println("Min:"+min);
+	            }
+	            if(m.get(i)>max){
+	                max=m.get(i);
+	               // System.out.println("Max:"+max);
+	            }
+	        }
+	        System.out.println(max-min);
 	    }
 	 }
 }
