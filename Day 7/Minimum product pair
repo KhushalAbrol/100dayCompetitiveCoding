@@ -1,0 +1,68 @@
+/*https://practice.geeksforgeeks.org/problems/minimum-product-pair/0/
+
+Correct Answer.Correct Answer
+Execution Time:1.36
+*/
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class GFG
+ {
+	public static void main (String[] args)
+	 {
+	    Scanner sc = new Scanner(System.in);
+	    int t = sc.nextInt();
+	    while(t-->0){
+	        int n = sc.nextInt();
+	        int A[] = new int[n];
+	        for(int i=0;i<n;i++){
+	            A[i]=sc.nextInt();
+	        }
+	        Arrays.sort(A);
+            System.out.println((long)A[0]*A[1]);
+	    }
+	 }
+}
+
+-----------------------------------------------------
+/*https://practice.geeksforgeeks.org/problems/minimum-product-pair/0/
+
+Correct Answer.Correct Answer
+Execution Time:0.94
+*/
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class GFG
+ {
+	public static void main (String[] args)
+	 {
+	    Scanner sc = new Scanner(System.in);
+	    int t = sc.nextInt();
+	    while(t-->0){
+	        int n = sc.nextInt();
+	        int A[] = new int[n];
+	        int a=0;
+	        int b=0;
+	        for(int i=0;i<n;i++){
+	            A[i]=sc.nextInt();
+	        }
+	        for(int i=0;i<n;i++){
+    	        if(i==0){
+	            }else if(i==1){
+	                a=A[0]>A[1]?A[0]:A[1];
+	                b=A[0]<A[1]?A[0]:A[1];
+	            }else if(A[i]<=a ){
+	                b=a>b?b:a;
+	                a=A[i];
+	            }else if(A[i]<=b){
+	                a=a<b?a:b;
+	                b=A[i];
+	            }
+	        }
+            System.out.println((long)a*b);
+	    }
+	 }
+}
