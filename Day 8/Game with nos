@@ -1,0 +1,39 @@
+/*
+https://practice.geeksforgeeks.org/problems/game-with-nos/0
+
+Correct Answer.Correct Answer
+Execution Time:0.69
+*/
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class GFG
+ {
+	public static void main (String[] args){
+	    Scanner sc = new Scanner(System.in);
+	    int t = sc.nextInt();
+	    while(t-->0){
+	        int n = sc.nextInt();
+	        int[] A = new int[n];
+	        int[] B = new int[n-1];
+	        for(int i=0;i<n;i++){
+	            A[i] = sc.nextInt();
+	        }
+	        for(int i=1;i<n;i++){
+                System.out.print((A[i-1] ^ A[i])+" ");
+	        }
+	        System.out.println(A[n-1]);
+          //------------------Or---------------------
+          /*
+          Correct Answer.Correct Answer
+          Execution Time:0.72
+
+          for(int i=1;i<n;i++){
+                str+=Integer.toString(A[i-1] ^ A[i])+" ";
+	        }
+	        System.out.println(str+A[n-1]);
+          */
+	    }
+	}
+}
