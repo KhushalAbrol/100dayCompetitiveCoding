@@ -1,0 +1,31 @@
+/*
+https://practice.geeksforgeeks.org/problems/maximum-gap/0/
+
+Correct Answer.Correct Answer
+Execution Time:2.42
+*/
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class GFG
+ {
+	public static void main (String[] args)
+	 {
+	    Scanner sc = new Scanner(System.in);
+	    int t = sc.nextInt();
+	    while(t-->0){
+	        int n = sc.nextInt();
+	        int A[] = new int[n];
+	        for(int i=0;i<n;i++){
+	            A[i]=sc.nextInt();
+	        }
+	        Arrays.sort(A);
+	        int res=0;
+	        for(int i=0;i<n-1;i++){
+	            if(A[i+1]-A[i]>res)
+	            res=A[i+1]-A[i];
+	        }
+	        System.out.println(res);
+	    }
+	 }
+}
