@@ -1,0 +1,30 @@
+/*
+https://practice.geeksforgeeks.org/problems/print-all-nodes-that-dont-have-sibling/1/
+
+Correct Answer.Correct Answer
+Execution Time:0.66
+*/
+class Tree
+{
+    void Sibling(Node root, ArrayList<Integer> list){
+        if(root==null){
+            return ;
+        }
+        else if(root.left!=null && root.right==null){
+            list.add(root.left.data);
+        }
+        else if(root.right!=null && root.left==null){
+            list.add(root.right.data);
+        }
+        Sibling(root.right, list);
+        Sibling(root.left, list);
+    }
+    ArrayList<Integer> noSibling(Node node)
+    {
+        ArrayList<Integer> list= new ArrayList<Integer>();
+        Sibling(node, list);
+        if(list.isEmpty()) list.add(-1);
+        else Collections.sort(list);
+        return list;
+    }
+}
