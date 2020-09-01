@@ -1,0 +1,26 @@
+/*
+https://practice.geeksforgeeks.org/problems/mirror-tree/1/
+
+Correct Answer.Correct Answer
+Execution Time:0.43
+*/
+class Tree
+{
+    void mirror(Node node)
+    {
+	    Inverse(node);
+	    
+    }
+    void Inverse(Node root){
+        
+        Node temp = root.left;
+        root.left = root.right;
+        root.right = temp;
+        if(root.left!=null){
+            Inverse(root.left);
+        }
+        if(root.right!=null){
+            Inverse(root.right);
+        }
+    }
+}
