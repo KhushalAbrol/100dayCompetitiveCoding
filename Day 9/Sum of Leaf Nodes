@@ -1,0 +1,19 @@
+/*
+https://practice.geeksforgeeks.org/problems/sum-of-leaf-nodes/1/
+
+Correct Answer.Correct Answer
+Execution Time:0.36
+*/
+class GfG
+{
+    public int SumofLeafNodes(Node root)
+    {
+        if(root==null) return 0;
+        if(root.left==null && root.right==null){
+            return root.data;
+        }
+        else{
+            return SumofLeafNodes(root.right)+ SumofLeafNodes(root.left);
+        }
+    }
+}
