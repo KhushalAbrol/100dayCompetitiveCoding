@@ -1,0 +1,21 @@
+/*
+https://practice.geeksforgeeks.org/problems/count-leaves-in-binary-tree/1/
+
+Correct Answer.Correct Answer
+Execution Time:0.51
+*/
+class Tree
+{
+    int Leaves(Node root, int sum){
+        if(root==null) return sum;
+        if(root.left==null && root.right==null){
+            return sum+=1;    
+        }
+        return Leaves(root.left, sum)+ Leaves(root.right, sum);
+    }
+    int countLeaves(Node node) 
+    {
+        int sum=0;
+        return Leaves(node, sum);
+    }
+}
