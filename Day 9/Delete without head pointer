@@ -1,0 +1,15 @@
+
+/*
+https://practice.geeksforgeeks.org/problems/delete-without-head-pointer/1
+
+Correct Answer.Correct Answer
+Execution Time:1.47
+*/
+class GfG
+{
+    void deleteNode(Node node)
+    {
+         node.data = node.next.data;
+         node.next=node.next.next;
+    }
+}
