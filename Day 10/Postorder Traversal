@@ -1,0 +1,30 @@
+/*
+https://practice.geeksforgeeks.org/problems/postorder-traversal/1/
+
+Correct Answer.Correct Answer
+Execution Time:0.39
+*/
+class Tree
+{
+    void Trans(Node root, ArrayList<Integer> list){
+        if(root == null) return;
+        Trans(root.left, list);
+        if(root.left!=null){
+            list.add(root.left.data);
+        }
+        Trans(root.right, list);
+        if(root.right!=null){
+            list.add(root.right.data);
+        }
+        return;
+        
+    }
+    ArrayList<Integer> postOrder(Node root)
+    {
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        Trans(root, list);
+        list.add(root.data);
+        if(list.isEmpty()) list.add(-1);
+        return list;
+    }
+}
