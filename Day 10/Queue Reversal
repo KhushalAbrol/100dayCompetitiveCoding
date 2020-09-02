@@ -1,0 +1,18 @@
+/*
+https://practice.geeksforgeeks.org/problems/queue-reversal/1
+
+Correct Answer.Correct Answer
+Execution Time:2.4
+*/
+class GfG{
+    public Queue<Integer> rev(Queue<Integer> q){
+        Stack<Integer> s = new Stack<Integer>();
+        while(!q.isEmpty()){
+            s.push(q.poll());
+        }
+        while(!s.isEmpty()){
+            q.add(s.pop());
+        }
+        return q;
+    }
+}
