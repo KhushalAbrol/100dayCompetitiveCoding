@@ -1,0 +1,23 @@
+/*
+https://practice.geeksforgeeks.org/problems/reverse-a-linked-list/1#comment-4901715987
+
+Correct Answer.Correct Answer
+Execution Time:1.8
+
+https://www.youtube.com/watch?v=MRe3UsRadKw
+*/
+class ReverseLL
+{
+    // This function should reverse linked list and return
+    // head of the modified linked list.
+    Node reverseList(Node head)
+    {
+        if(head.next==null){
+            return head;
+        }
+        Node newHead = reverseList(head.next);
+        head.next.next = head;
+        head.next = null;
+        return newHead;
+    }
+}
