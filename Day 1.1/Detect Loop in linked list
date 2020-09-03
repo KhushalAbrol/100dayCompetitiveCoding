@@ -1,4 +1,4 @@
-/*
+/*-----------------------------------Using Floyd's Cycle finding Algo
 https://practice.geeksforgeeks.org/problems/detect-loop-in-linked-list/1/
 
 Correct Answer.Correct Answer
@@ -14,6 +14,27 @@ class Solution {
             if(fast==slow){
                 return true;
             }
+        }
+        return false;
+    }
+}
+-----------------------------------------------------------
+/*--------------------------Using HashSet------------------
+https://practice.geeksforgeeks.org/problems/detect-loop-in-linked-list/1/
+
+Correct Answer.Correct Answer
+Execution Time:1.95
+*/
+class Solution {
+    public static boolean detectLoop(Node head){
+        HashSet<Node> h = new HashSet<Node>();
+        while(head.next!=null){
+            if(h.contains(head)){
+                return true;
+            }else{
+                h.add(head);
+            }
+            head=head.next;
         }
         return false;
     }
