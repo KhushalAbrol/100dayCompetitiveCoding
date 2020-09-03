@@ -1,0 +1,15 @@
+/*
+https://practice.geeksforgeeks.org/problems/compare-two-linked-lists/1
+
+Correct Answer.Correct Answer
+Execution Time:0.27
+*/
+class GfG
+{
+    int compare(Node node1, Node node2){
+        if(node1==null && node2==null) return 0;
+        if(node1.data>node2.data) return 1;
+        if(node2.data>node1.data) return -1;
+        return compare(node1.next, node2.next);
+    }
+}
