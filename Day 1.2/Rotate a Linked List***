@@ -1,0 +1,34 @@
+/*
+https://practice.geeksforgeeks.org/problems/rotate-a-linked-list/1/
+
+Correct Answer.Correct Answer
+Execution Time:2.64
+*/
+class Rotate{
+    // This function should rotate list counter-
+    // clockwise by k and return head node
+    
+    public Node rotate(Node head, int k) {
+        Node h=head;//Head of original LL
+        Node p=head;//Last of New LL
+        Node q=head;//Head of new LL
+        while(k-->1){
+            p=p.next;
+        }
+        q=p.next;
+        p.next=null;
+        Node last=q;// last of broken LL
+        Node l=q; 
+        if(last==null){
+            return head;//if k ==length then q = null and In that case the LL we b same as original 
+        }else{
+            while(last!=null){
+                l=last;
+                last=last.next;
+            }
+        }
+        
+        l.next=head;
+        return q;
+    }
+}
