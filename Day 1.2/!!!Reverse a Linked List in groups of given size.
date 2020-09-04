@@ -1,0 +1,38 @@
+/*
+https://practice.geeksforgeeks.org/problems/reverse-a-linked-list-in-groups-of-given-size/1/
+
+
+Runtime ErrorException in thread "main" java.lang.NullPointerException
+	at GfG.reverseSubList(File.java:79)
+*/
+class GfG
+{
+    static Node reverseSubList(Node node, int k){
+        if(k==1) return node;
+        Node Head = reverseSubList(node.next, k--);
+        node.next.next = node;
+        node.next = null;
+        return Head;
+    }
+    public static Node reverse(Node node, int k)
+    {
+        Node H = node;
+        Node h = null;
+        Node l = null;
+        while(k-->0) H=H.next;
+        int i=0;
+        while(node.next!=null){
+            if(i%k==0){
+                h = reverseSubList(node, k);
+                l.next = h;
+                while(h.next!=null) h=h.next;
+                l=h;
+            }
+            node=node.next;
+            i++;
+        }
+        
+        return H;
+    }
+}
+
