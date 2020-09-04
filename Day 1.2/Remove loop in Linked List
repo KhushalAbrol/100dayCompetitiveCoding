@@ -1,0 +1,24 @@
+/*-------------------------Using HashSet-------------------------------
+https://practice.geeksforgeeks.org/problems/remove-loop-in-linked-list/1/
+
+Correct Answer.Correct Answer
+Execution Time:2.6
+*/
+class solver
+{
+    public static void removeLoop(Node head){
+        HashSet<Node> h = new HashSet<Node>();
+        Node n=head;
+        Node p=head;
+        while(n.next!=null){
+            if(h.contains(n)){
+                p.next=null;
+                break;
+            }else{
+                p=n;
+                h.add(n);
+            }
+            n=n.next;
+        }
+    }
+}
