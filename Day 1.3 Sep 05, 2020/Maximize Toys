@@ -1,0 +1,67 @@
+/*
+https://practice.geeksforgeeks.org/problems/maximize-toys/0/
+
+Correct Answer.Correct Answer
+Execution Time:0.46
+*/import java.util.*;
+import java.lang.*;
+import java.io.*;
+class GFG{
+	public static void main (String[] args){
+		Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while(t-->0){
+            int n = sc.nextInt();
+            int k = sc.nextInt();
+            int A[] = new int[n];
+            for(int i=0;i<n;i++){
+                A[i]=sc.nextInt();
+            }
+            Arrays.sort(A);
+            int res=0;
+            for(int i=0;i<n;i++){
+                k-=A[i];
+                if(k<0){
+                    System.out.println(res);
+                    break;
+                } 
+                res++;
+            }
+        }
+	}
+}
+
+//----------------------------------------------------------
+
+
+/*---------------------------------------Using Priority Queue--------------------
+https://practice.geeksforgeeks.org/problems/maximize-toys/0/
+
+Correct Answer.Correct Answer
+Execution Time:0.42
+*/import java.util.*;
+import java.lang.*;
+import java.io.*;
+class GFG{
+	public static void main (String[] args){
+		Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while(t-->0){
+            int n = sc.nextInt();
+            int k = sc.nextInt();
+            PriorityQueue<Integer> p = new PriorityQueue<Integer>();
+            for(int i=0;i<n;i++){
+                p.add(sc.nextInt());
+            }
+            int res=0;
+            for(int i=0;i<n;i++){
+                k-=p.poll();
+                if(k<0){
+                    System.out.println(res);
+                    break;
+                } 
+                res++;
+            }
+        }
+	}
+}
