@@ -1,0 +1,33 @@
+/*--------------------------
+https://practice.geeksforgeeks.org/problems/does-array-represent-heap/0/
+
+Correct Answer.Correct Answer
+Execution Time:1.76
+*/import java.util.*;
+import java.lang.*;
+import java.io.*;
+class GFG{
+	public static void main (String[] args){
+		Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while(t-->0){
+            int n = sc.nextInt();
+            int A[] = new int[n];
+            boolean isHeap = true;
+            for(int i=0;i<n;i++) A[i] = sc.nextInt();
+            if(n==2 && A[0]<A[1]) isHeap = false;
+            else if(n==1 || n==0) isHeap =  true;
+            else{
+                int i=0;
+                for(i=0;(i*2)+2<n;i++){
+                    if(A[i]<A[i*2+1] || A[i]<A[i*2+2]){
+                        isHeap = false;
+                        break;
+                    }
+                }
+                if((i*2)+1<n) if(A[i]<A[i+1]) isHeap = false;
+            }
+            System.out.println(isHeap?"1":"0");
+        }
+	}
+}
