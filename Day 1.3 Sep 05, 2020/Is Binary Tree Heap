@@ -1,0 +1,17 @@
+/*------Recursion
+Correct Answer.Correct Answer
+Execution Time:0.44
+
+https://practice.geeksforgeeks.org/problems/is-binary-tree-heap/1
+*/
+class GfG
+{
+    /*You are required to complete this method */
+    boolean isHeap(Node root)
+    { 
+       if(root==null) return true;
+       if(root.left!=null && root.data<root.left.data) return false;
+	   if(root.right!=null && root.data<root.right.data) return false;
+	   return isHeap(root.left) && isHeap(root.right);
+    }
+}
