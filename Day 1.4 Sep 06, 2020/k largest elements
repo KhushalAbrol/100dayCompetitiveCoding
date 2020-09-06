@@ -1,0 +1,79 @@
+/*
+https://practice.geeksforgeeks.org/problems/k-largest-elements/0/
+
+Correct Answer.Correct Answer
+Execution Time:3.45
+*/
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class GFG{
+	public static void main (String[] args){
+		Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while(t-->0){
+            int n = sc.nextInt();
+            int k = sc.nextInt();
+            int A[] = new int[n];
+            for(int i=0;i<n;i++) A[i] = sc.nextInt();
+            Arrays.sort(A);
+            for(int i=n-1;i>n-1-k;i--){
+                System.out.print(A[i]+" ");
+            }
+            System.out.println();
+        }
+	}
+}
+//--------------------------------------------------------String Buffer
+/*
+Correct Answer.Correct Answer
+Execution Time:3.07
+*/
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class GFG{
+	public static void main (String[] args){
+		Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while(t-->0){
+            int n = sc.nextInt();
+            int k = sc.nextInt();
+            int A[] = new int[n];
+            StringBuffer s = new StringBuffer();
+            for(int i=0;i<n;i++) A[i] = sc.nextInt();
+            Arrays.sort(A);
+            for(int i=n-1;i>n-1-k;i--){
+                s.append(A[i]+" ");
+            }
+            System.out.println(s);
+        }
+  	}
+}
+//--------------------------------String Builder
+/*
+Correct Answer.Correct Answer
+Execution Time:2.04
+*/
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class GFG{
+	public static void main (String[] args){
+		Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while(t-->0){
+            int n = sc.nextInt();
+            int k = sc.nextInt();
+            int A[] = new int[n];
+            StringBuilder s = new StringBuilder();
+            for(int i=0;i<n;i++) A[i] = sc.nextInt();
+            Arrays.sort(A);
+            for(int i=n-1;i>n-1-k;i--){
+                s.append(A[i]+" ");
+            }
+            System.out.println(s);
+        }
+	}
+}
+
