@@ -1,0 +1,22 @@
+/*
+https://practice.geeksforgeeks.org/problems/preorder-traversal/1/
+
+Correct Answer.Correct Answer
+Execution Time:1.59
+*/
+class BinaryTree
+{
+    static ArrayList<Integer> trans(Node root, ArrayList<Integer> A){
+        if(root==null) return A;
+        else A.add(root.data);
+        if(root.left!=null) trans(root.left, A);
+        if(root.right!=null) trans(root.right, A);
+        return A;
+    }
+    static ArrayList<Integer> preorder(Node root)
+    {
+        ArrayList<Integer> A = new ArrayList<Integer>();
+        return trans(root, A);
+    }
+
+}
