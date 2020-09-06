@@ -1,0 +1,15 @@
+/*
+https://practice.geeksforgeeks.org/problems/height-of-binary-tree/1
+
+Correct Answer.Correct Answer
+Execution Time:0.27
+*/
+
+class Tree
+{
+    int height(Node root) 
+    {
+         if(root==null) return 0;
+         return 1+Math.max(height(root.right), height(root.left));
+    }   
+}
