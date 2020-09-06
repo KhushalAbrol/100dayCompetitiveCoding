@@ -1,0 +1,29 @@
+/*
+https://practice.geeksforgeeks.org/problems/inorder-traversal/1/
+
+Correct Answer.Correct Answer
+Execution Time:0.35https://practice.geeksforgeeks.org/problems/inorder-traversal/1/
+*/
+class Tree
+{
+    ArrayList<Integer> func(Node root, ArrayList<Integer> A){
+        if(root==null) return A;
+        if(root.left==null && root.right==null){
+            A.add(root.data);
+            return A;
+        } 
+        if(root.left!=null){
+            func(root.left, A);
+        }
+        A.add(root.data);
+        if(root.right!=null) {
+            func(root.right, A);
+        }
+        return A;        
+    }
+    ArrayList<Integer> inOrder(Node root)
+    {
+        ArrayList<Integer> A = new ArrayList<Integer>();
+        return func(root, A);
+    }   
+}
