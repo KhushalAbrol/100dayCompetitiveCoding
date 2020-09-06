@@ -1,0 +1,40 @@
+/*
+https://practice.geeksforgeeks.org/problems/kth-largest-element-in-a-stream/0/
+
+Correct Answer.Correct Answer
+Execution Time:3.23
+*/import java.util.*;
+import java.lang.*;
+import java.io.*;
+class GFG{
+	public static void main (String[] args){
+		Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while(t-->0){
+            int k = sc.nextInt();
+            int n = sc.nextInt();
+            int A[] = new int[n];
+            PriorityQueue<Integer> p = new PriorityQueue<Integer>();
+            StringBuffer s = new StringBuffer();
+            for(int i=0;i<n;i++){
+                A[i] = sc.nextInt();
+                if(p.size()<k-1){
+                    p.add(A[i]);
+                    s.append("-1 ");
+                }
+            }
+            p.add(A[k-1]);
+            s.append(p.peek()+" ");
+            for(int i=k;i<n;i++){
+                if(A[i]>p.peek()){
+                    p.poll();
+                    p.add(A[i]);
+                    s.append(p.peek()+" ");
+                }else{
+                    s.append(p.peek()+" ");
+                }
+            }
+            System.out.println(s);
+        }
+	}
+}
