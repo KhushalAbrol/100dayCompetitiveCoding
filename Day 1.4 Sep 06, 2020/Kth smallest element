@@ -1,0 +1,55 @@
+/*
+https://practice.geeksforgeeks.org/problems/kth-smallest-element/0/
+
+Correct Answer.Correct Answer
+Execution Time:3.48
+*/
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class GFG{
+	public static void main (String[] args){
+		Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while(t-->0){
+            int n = sc.nextInt();
+            int[] A = new int[n];
+            for(int i=0;i<n;i++){
+                A[i]=sc.nextInt();
+            }
+            int k = sc.nextInt();
+            Arrays.sort(A);
+            System.out.println(A[k-1]);
+        }
+	}
+}
+//----------------------------------------PriotityQueue
+
+/*
+https://practice.geeksforgeeks.org/problems/kth-smallest-element/0/
+
+Correct Answer.Correct Answer
+Execution Time:2.34
+*/
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class GFG{
+	public static void main (String[] args){
+		Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while(t-->0){
+            int n = sc.nextInt();
+            PriorityQueue<Integer> p = new PriorityQueue<Integer>();
+            while(n-->0){
+                p.add(sc.nextInt());
+            }
+            int k = sc.nextInt();
+            k--;
+            while(k-->0){
+                p.poll();
+            }
+            System.out.println(p.poll());
+        }
+	}
+}
