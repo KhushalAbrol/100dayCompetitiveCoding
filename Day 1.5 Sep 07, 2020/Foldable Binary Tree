@@ -1,0 +1,19 @@
+/*
+https://practice.geeksforgeeks.org/problems/foldable-binary-tree/1
+
+Correct Answer.Correct Answer
+Execution Time:0.36
+
+*/
+class Tree {
+    boolean fold(Node left, Node right){
+        if(left==null && right==null) return true;
+        if(left==null || right==null) return false;
+        return fold(left.left, right.right) && fold(right.left, left.right);
+    }
+    boolean IsFoldable(Node root){ 
+		 if(root==null) return true;
+		 if(fold(root.left, root.right)) return true;
+		 return false;
+	} 
+}
