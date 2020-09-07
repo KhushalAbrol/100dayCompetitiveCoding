@@ -1,0 +1,21 @@
+/*
+https://practice.geeksforgeeks.org/problems/delete-alternate-nodes/1/
+
+Correct Answer.Correct Answer
+Execution Time:0.38
+*/
+class Solution {
+    
+    public void deleteAlternate (Node head){
+        Node temp = head;
+        while(true){
+            if(head==null || head.next==null ) break;
+            head.next=head.next.next;
+            head=head.next;
+        }
+        while(temp!=null) {
+            System.out.print(temp.data+" ");
+            temp=temp.next;
+        }
+    }
+}
