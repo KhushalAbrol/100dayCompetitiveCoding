@@ -1,0 +1,19 @@
+/*
+https://practice.geeksforgeeks.org/problems/modular-node/1
+
+Correct Answer.Correct Answer
+Execution Time:0.59
+*/
+class GfG
+{
+    public static int moduarNode(Node head, int k){
+        int i=1;
+        int x=-1;
+        while(head!=null){
+            if(i%k==0) x=head.data;
+            i++;
+            head=head.next;
+        }
+        return x;
+    }
+}
