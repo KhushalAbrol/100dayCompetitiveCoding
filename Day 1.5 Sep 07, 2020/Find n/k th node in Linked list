@@ -1,0 +1,22 @@
+/*
+https://practice.geeksforgeeks.org/problems/find-nk-th-node-in-linked-list/1/
+
+Correct Answer.Correct Answer
+Execution Time:0.45
+*/
+class GfG
+{
+    public static int nknode(Node head, int k){
+       int i=0;
+       Node temp=head;
+       while(head!=null){
+           head=head.next;
+           i++;
+       }
+       int x = (int)Math.ceil(i/(float)k);
+        while(x-->1){
+            temp=temp.next;
+        }
+       return temp.data;
+    }
+}
