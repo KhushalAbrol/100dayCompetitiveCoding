@@ -1,0 +1,26 @@
+/*
+https://practice.geeksforgeeks.org/problems/insert-in-middle-of-linked-list/1/
+
+Correct Answer.Correct Answer
+Execution Time:1.89
+*/
+class Solution {
+    
+    public Node insertInMid(Node head, int data){
+        Node H = head;
+        Node temp = head;
+        Node insert = new Node(data);
+        int i=0;
+        while(temp!=null){
+            i++;
+            temp=temp.next;
+        }
+        i=(int)Math.ceil(i/2.0);
+        while(i-->1){
+            head=head.next;
+        }
+        insert.next = head.next;
+        head.next=insert;
+        return H;
+    }
+}
