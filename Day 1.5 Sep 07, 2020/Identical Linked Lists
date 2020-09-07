@@ -1,0 +1,17 @@
+/*
+https://practice.geeksforgeeks.org/problems/identical-linked-lists/1/
+
+Correct Answer.Correct Answer
+Execution Time:1.94
+*/
+class Solution {
+    
+    // Function which returns true if both linked
+    // lists are identical else return false
+    public boolean isIdentical (Node a, Node b){
+        if(a==null && b==null) return true;
+        if(a==null || b==null) return false;
+        if(a.data!=b.data) return false;
+        return isIdentical(a.next, b.next);
+    }
+}
