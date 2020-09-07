@@ -38,3 +38,25 @@ class Solution {
         if(head!=null) System.out.print(head.data+" ");
     }
 }
+
+//--------------------------------------
+/*
+https://practice.geeksforgeeks.org/problems/delete-alternate-nodes/1/
+
+Correct Answer.Correct Answer
+Execution Time:0.32
+*/
+class Solution {
+    
+    public void deleteAlternate (Node head){
+        StringBuilder s = new StringBuilder();
+        while(true){
+            if(head==null || head.next==null ) break;
+            head.next=head.next.next;
+            s.append(head.data+" ");
+            head=head.next;
+        }
+        if(head!=null) s.append(head.data+" ");
+        System.out.print(s);
+    }
+}
