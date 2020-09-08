@@ -1,0 +1,26 @@
+/*
+https://practice.geeksforgeeks.org/problems/delete-a-node-in-single-linked-list/1/
+
+Correct Answer.Correct Answer
+Execution Time:0.54
+*/
+class GfG
+{
+    Node deleteNode(Node head, int x)
+    {
+        Node Head = head;
+        if(x==1){
+            return head.next;
+        }
+	    int i=1;
+	    while(head.next!=null){
+	        if(i==x-1){
+	            head.next=head.next.next;
+	            break;
+	        }
+	        i++;
+	        head=head.next;
+	    }
+	    return Head; 
+    }
+}
