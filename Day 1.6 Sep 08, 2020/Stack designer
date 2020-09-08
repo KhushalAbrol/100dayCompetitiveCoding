@@ -1,0 +1,22 @@
+/*
+https://practice.geeksforgeeks.org/problems/stack-designer/1
+
+Correct Answer.Correct Answer
+Execution Time:0.49
+*/
+public static Stack<Integer>_push(ArrayList<Integer> arr,int n)
+{
+    Stack<Integer> s = new Stack<Integer>();
+    int len = arr.size();
+    for(int i=0;i<len;i++){
+        s.push(arr.get(i));
+    }
+    return s;
+}
+
+public static void _pop(Stack<Integer>s)
+{
+    while(!s.isEmpty()){
+        System.out.print(s.pop()+" ");
+    }
+}
