@@ -1,0 +1,18 @@
+/*
+https://practice.geeksforgeeks.org/problems/linked-list-length-even-or-odd/1
+  
+Correct Answer.Correct Answer
+Execution Time:0.25
+   */
+class GFG
+{
+	int isLengthEvenorOdd(Node head1)
+	{
+	    int i=0;
+	    while(head1.next!=null){
+	        i++;
+	        head1=head1.next;
+	    }
+	    return i%2==0?1:0;
+	}
+}
