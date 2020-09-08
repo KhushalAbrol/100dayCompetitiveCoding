@@ -1,0 +1,30 @@
+/*
+https://practice.geeksforgeeks.org/problems/delete-node-in-doubly-linked-list/1/
+
+Correct Answer.Correct Answer
+Execution Time:1.08
+*/
+class GfG
+{
+    Node deleteNode(Node head,int x)
+    {        
+        if(x==1){
+            head=head.next;
+            head.prev = null;
+            return head;
+        }
+    	Node H = head;
+    	int i=1;
+	    while(head.next!=null){
+	        if(i==x){
+	            if(head.prev!=null) head.prev.next=head.next;
+	            if(head.next!=null) head.next.prev=head.prev;
+	            return H;
+	        }
+	        i++;
+	        head=head.next;
+	    }    
+	    head.prev.next=null;
+	    return H;
+    }
+}
