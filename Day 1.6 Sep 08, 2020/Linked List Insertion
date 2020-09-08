@@ -1,0 +1,31 @@
+/*
+https://practice.geeksforgeeks.org/problems/linked-list-insertion-1587115620/1/
+
+Correct Answer.Correct Answer
+Execution Time:1.39
+*/
+class Solution
+{
+    // Should insert a node at the beginning
+    Node insertAtBeginning(Node head, int x)
+    {
+        Node H = new Node(x);
+        H.next = head;
+        return H;
+    }
+    
+    // Should insert a node at the end
+    Node insertAtEnd(Node head, int x)
+    {
+        if(head == null){
+            Node node = new Node(x);
+            return node;
+        }
+        Node H = head;
+        Node E = new Node(x);
+        E.next=null;
+        while(head.next!=null) head=head.next;
+        head.next = E;
+        return H;
+    }
+}
