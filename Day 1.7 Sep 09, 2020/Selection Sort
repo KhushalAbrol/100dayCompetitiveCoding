@@ -1,0 +1,24 @@
+/*
+https://practice.geeksforgeeks.org/problems/selection-sort/1
+
+Correct Answer.Correct Answer
+Execution Time:0.88
+*/
+
+class Solution
+{
+	void selectionSort(int A[])
+	{
+	    int n = A.length;
+	    int temp;
+	    for(int i=0;i<n;i++){
+	        for(int j=i+1;j<n;j++){
+	            if(A[j]<A[i]){
+	                temp= A[j];
+	                A[j]=A[i];
+	                A[i]=temp;
+	            }
+	        }
+	    }
+	}
+}
