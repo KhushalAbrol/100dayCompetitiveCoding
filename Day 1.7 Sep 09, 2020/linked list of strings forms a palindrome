@@ -1,0 +1,23 @@
+/*
+https://practice.geeksforgeeks.org/problems/linked-list-of-strings-forms-a-palindrome/1/
+
+Correct Answer.Correct Answer
+Execution Time:0.38
+*/
+class GfG
+{
+    public static boolean compute(Node head){
+        StringBuilder s = new StringBuilder();
+        while(head!=null){
+            s.append(head.data);
+            head=head.next;
+        }
+        int n = s.length();
+        for(int i=0;i<n;i++){
+            if(s.charAt(i)!=s.charAt(n-1-i)){
+                return false;
+            }
+        }
+        return true;
+    }
+}
