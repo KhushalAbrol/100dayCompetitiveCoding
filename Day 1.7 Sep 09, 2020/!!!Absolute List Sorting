@@ -1,0 +1,30 @@
+/*-----------------------O(n^n)-----------
+https://practice.geeksforgeeks.org/problems/absolute-list-sorting/1/
+
+Your program took more time than expected.Time Limit Exceeded
+Expected Time Limit < 1.492sec
+*/
+class GfG
+{
+    Node sort(Node head){
+        if(head.next==null) return head;
+		int a = head.data;
+		int b = head.next.data;
+		int temp = 0;
+		if(a>b){
+		    temp= head.data;
+		    head.data= head.next.data;
+		    head.next.data=temp;
+		}
+		sortedList(head.next);
+		return head;
+    }
+	Node sortedList(Node head){
+	    Node temp = head;
+		while(head!=null){
+		    sort(temp);
+		    head = head.next;
+		}
+		return temp;
+	}
+}
