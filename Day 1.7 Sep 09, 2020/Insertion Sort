@@ -1,0 +1,26 @@
+/*
+https://practice.geeksforgeeks.org/problems/insertion-sort/1/
+
+Correct Answer.Correct Answer
+Execution Time:0.71
+*/
+{
+  GfG obj = new GfG();
+   for (int i = 1; i < n; i++)
+      obj.insert(arr, i);
+} */
+
+class InsertionSort
+{
+  static void insert(int A[],int i)
+  {
+      int temp;
+       for(int j=i;j>0;j--){
+           if(A[j]<A[j-1]){
+               temp = A[j];
+               A[j] = A[j-1];
+               A[j-1] = temp;
+           }
+       }
+  }
+}
