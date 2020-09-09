@@ -1,0 +1,26 @@
+/*
+https://practice.geeksforgeeks.org/problems/bubble-sort/1
+
+Correct Answer.Correct Answer
+Execution Time:0.98
+*/
+/* A function to implement bubble sort
+void bubbleSort(int arr[], int n)
+{
+   for (int i = 0; i < n-1; i++)      
+        bubble(arr, i, n);
+} */
+class BubbleSort
+{
+	static void bubble(int A[], int i, int n)
+    {
+        int x=0;
+        for(int j=0;j<n-1-i;j++){
+            if(A[j]>A[j+1]){
+                x=A[j];
+                A[j]=A[j+1];
+                A[j+1]=x;
+            }
+        }
+    }
+}
