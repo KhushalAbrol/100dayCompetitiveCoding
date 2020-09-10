@@ -1,0 +1,35 @@
+
+/*
+https://practice.geeksforgeeks.org/problems/frequency-game/1
+
+Correct Answer.Correct Answer
+Execution Time:0.2
+*/
+import java.util.Map;
+
+class Geeks{
+    public static int LargButMinFreq(int A[], int n){
+        Map<Integer, Integer> h = new HashMap<Integer, Integer>();
+        for(int i=0;i<n;i++){
+            if(h.containsKey(A[i])){
+                h.put(A[i], h.get(A[i])+1);
+            }else{
+                h.put(A[i], 0);
+            }
+        }   
+        Entry<Integer, Integer> min = null;
+        for(Entry<Integer, Integer> e: h.entrySet()){
+            if(min ==null || min.getValue()>e.getValue()){
+                min = e;
+            }
+        }
+        int maxKey=0;
+        for(Entry<Integer, Integer> e : h.entrySet()){
+            if(e.getValue() == min.getValue() && e.getKey()>maxKey){
+                maxKey = e.getKey();
+            }
+        }
+        return maxKey;
+        // System.out.println(maxKey);
+    }
+}
