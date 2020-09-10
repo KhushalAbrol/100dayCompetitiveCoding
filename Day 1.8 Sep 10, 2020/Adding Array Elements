@@ -1,0 +1,43 @@
+/*
+https://practice.geeksforgeeks.org/problems/adding-array-element/0
+
+Correct Answer.Correct Answer
+Execution Time:1.55
+*/
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class GFG{
+	public static void main (String[] args){
+		Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while(t-->0){
+            int n = sc.nextInt();
+            int k = sc.nextInt();
+            int A[] = new int[n];
+            for(int i=0;i<n;i++){
+                A[i] = sc.nextInt();  
+            }
+            PriorityQueue<Integer> p = new PriorityQueue<Integer>();
+            for(int i=0;i<n;i++){
+                p.add(A[i]);
+            }
+            int a=0, b=0,c=-1, res=0;
+            while(p.size()>1){
+                a = p.poll();
+                b = p.poll();
+                if(a<k){
+                    // System.out.println("A:"+a+"|B:"+b);
+                    res++;
+                    c= a+b;
+                    p.add(c);
+                }else{
+                    break;
+                }
+            }
+            if(c<k&& c!=-1 ) System.out.println("-1");
+            else System.out.println(res);
+            
+        }
+	}
+}
