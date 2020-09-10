@@ -1,0 +1,43 @@
+/*
+https://practice.geeksforgeeks.org/problems/sum-of-elements-between-k1th-and-k2th-smallest-elements/0/
+
+Wrong Answer. !!!Wrong Answer
+
+Possibly your code doesn't work correctly for multiple test-cases (TCs).
+
+The first test case where your code failed:
+
+Input:
+27021
+126574 130232 127381 115456 119082 108573 115937 120812 112695 101058 113101 128470 126644 107484 127246 106411 130216 125158 106877 109302 111428 110814 108149 107697 118376 122800 118140 129114 118633 124403 108326 101706 128274 125139 122679 118339 128232 108110 122888 118600 121266 125348 116012 132529 109369 107528 123218 116350 115533 130460 121709 130796 128008 127644 108307 121670 123735 119001 121891 118782 114613 108906 111019 112892 111162 101022 106505 131894 111061 103989 126544 103553 105430 116687 110317 124326 112047 130980 126858 131769 130043 107894 106546 124326 123583 128964 128438 122637 125680 121665 117584 131408 110902 114308 116615 115178 121328 124417 116818 115970 130680 111672 121472 100159 130984 115244 114775 121311 123293 121879 117628 124163 103610 112220 101907 107597 118768 126653 108326 102829 122941 110030 110155 127608 102771 130217 131713 129723 103483 107236 131164 113358 132441 106688 123746 101164 129586 104867 120500 125569 112267 115401 .................
+
+Its Correct output is:
+2639808309
+
+And Your Code's output is:
+2804970717
+*/
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class GFG{
+	public static void main (String[] args){
+		Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while(t-->0){
+            int n = sc.nextInt();
+            int A[] = new int[n];
+            for(int i=0;i<n;i++) A[i] = sc.nextInt();
+            int min = sc.nextInt();
+            int max = sc.nextInt();
+            max--;
+            Arrays.sort(A);
+            long sum = 0;
+            for(int i = min; i< max && i<n ; i++){
+                sum+=A[i];
+            }
+            System.out.println(sum);
+        }
+	}
+}
