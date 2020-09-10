@@ -1,0 +1,19 @@
+/*
+https://practice.geeksforgeeks.org/problems/pair-sum-existence/1/
+
+Correct Answer.Correct Answer
+Execution Time:0.87
+*/
+class Geeks
+{
+    public static int sumExists(int A[], int n, int sum)
+    {
+        HashSet<Integer> h = new HashSet<Integer>();
+        h.add(A[0]);
+        for(int i=1;i<n;i++){
+            if(h.contains(sum-A[i])) return 1;
+            h.add(A[i]);
+        }
+        return 0;
+    }
+}
