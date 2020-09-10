@@ -1,0 +1,21 @@
+/*
+https://practice.geeksforgeeks.org/problems/pair-sum-existence-revisited/1/
+
+Correct Answer.Correct Answer
+Execution Time:0.71
+*/
+class Geeks
+{
+    // function to check if any pair having specified sum
+    // and return 1 if so, else 0
+    public static int sumExists(int A[], int n, int sum)
+    {
+        HashSet<Integer> h = new HashSet<Integer>();
+        h.add(A[0]);
+        for(int i=1;i<n;i++){
+            if(h.contains(sum-A[i])) return 1;
+            h.add(A[i]);
+        }
+        return 0;
+    }
+}
