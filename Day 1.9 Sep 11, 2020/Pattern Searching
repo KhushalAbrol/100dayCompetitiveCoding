@@ -1,0 +1,46 @@
+/*
+https://practice.geeksforgeeks.org/problems/pattern-searching/0
+
+Correct Answer.Correct Answer
+Execution Time:0.2
+*/
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class GFG
+ {
+	public static void main (String[] args)
+	 {
+	    Scanner sc = new Scanner(System.in);
+	    int t = sc.nextInt();
+	    sc.nextLine();
+	    while(t-->0){
+	        String s1 = sc.nextLine();
+	        String s2 = sc.nextLine();
+	        int n1 = s1.length();
+	        int n2 = s2.length();
+	        boolean found = true;
+	        char[] A = s1.toCharArray();
+	        char[] B = s2.toCharArray();
+	        for(int i=0;i<n1;i++){
+	            found = true;
+	            if(n1-i<n2){
+	                found = false;
+	            }
+	            if(A[i] == B[0] && found){
+	                for(int j=0;j<n2 && (i+j)<n1;j++){
+	                    if(A[i+j]!=B[j]){
+	                        found = false;
+	                        break;
+	                    }
+	                }
+	                if(found){
+	                    break;
+	                }
+	            }
+	        }
+	        System.out.println(found?"found":"not found");
+	        
+	    }
+	 }
+}
