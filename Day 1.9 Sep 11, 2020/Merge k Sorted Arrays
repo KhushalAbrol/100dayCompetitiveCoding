@@ -1,0 +1,25 @@
+/*Priority Queue
+https://practice.geeksforgeeks.org/problems/merge-k-sorted-arrays/1
+
+Correct Answer.Correct Answer
+Execution Time:2.01
+*/
+class Solution{
+    public static ArrayList<Integer> mergeKArrays(int[][] A,int k) 
+    {
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        PriorityQueue<Integer> p = new PriorityQueue<Integer>();
+        for(int i=0;i<k;i++){
+            for(int j=0;j<k;j++){
+                p.add(A[i][j]);
+            }
+        }
+        for(int i=0;i<k;i++){
+            for(int j=0;j<k;j++){
+                list.add(p.poll());
+            }
+        }
+        return list;
+        
+    }
+}
