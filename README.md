@@ -25,5 +25,11 @@
 
 ### Algorithm
 
+* Sorting
+1. Bubble Sort
+2. Selection Sort
+3. Insertion Sort
+4. Merge Sort
+
 * String Algo
 1. Knuth-Morris-Pratt (KMP) String Matching Algorithm
