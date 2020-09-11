@@ -1,4 +1,4 @@
-/*
+/*---------------------------------HashMap
 https://practice.geeksforgeeks.org/problems/single-number/0
 
 Correct Answer.Correct Answer
@@ -18,5 +18,21 @@ class Solution {
             if(e.getValue()%2!=0) return e.getKey();
         }
         return 0;
+    }
+}
+//--------------------------------------------------------
+/*---------------------------XOR-------------------------
+https://practice.geeksforgeeks.org/problems/single-number/0
+
+Correct Answer.Correct Answer
+Execution Time:0.79
+*/
+class Solution {
+    int getSingle(int A[], int n) {
+        int num = A[0]^A[1];
+        for(int i=2;i<n;i++){
+            num = num ^ A[i];
+        }
+        return num;
     }
 }
