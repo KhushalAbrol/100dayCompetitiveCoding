@@ -1,0 +1,22 @@
+/*
+https://practice.geeksforgeeks.org/problems/single-number/0
+
+Correct Answer.Correct Answer
+Execution Time:1.2
+*/
+class Solution {
+    int getSingle(int A[], int n) {
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+        for(int i=0;i<n;i++){
+            if(map.containsKey(A[i])){
+                map.put(A[i], map.get(A[i])+1);
+            }else{
+                map.put(A[i], 1);
+            }
+        }
+        for(Entry<Integer, Integer> e: map.entrySet()){
+            if(e.getValue()%2!=0) return e.getKey();
+        }
+        return 0;
+    }
+}
