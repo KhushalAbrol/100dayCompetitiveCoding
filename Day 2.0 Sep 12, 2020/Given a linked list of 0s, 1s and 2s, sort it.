@@ -1,0 +1,34 @@
+/*
+https://practice.geeksforgeeks.org/problems/given-a-linked-list-of-0s-1s-and-2s-sort-it/1/
+
+Correct Answer.Correct Answer
+Execution Time:1.41
+*/
+class LinkedList
+{
+    static Node segregate(Node head){
+        Node temp = head;
+        int x=0,y=0,z=0;
+        while(temp!=null){
+            if(temp.data==0)x++;
+            else if(temp.data==1)y++;
+            else z++;
+            temp=temp.next;
+        }
+        // System.out.println("X:"+x+"|Y:"+y+"|Z:"+z);
+        temp = head;
+        for(int i=0;i<x;i++){
+            temp.data = 0;
+            temp=temp.next;
+        }
+        for(int i=0;i<y;i++){
+            temp.data = 1;
+            temp=temp.next;
+        }
+        for(int i=0;i<z;i++){
+            temp.data = 2;
+            temp=temp.next;
+        }
+        return head;
+    }
+}
