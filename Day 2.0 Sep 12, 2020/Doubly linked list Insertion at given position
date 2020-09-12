@@ -1,0 +1,23 @@
+/*
+https://practice.geeksforgeeks.org/problems/insert-a-node-in-doubly-linked-list/1
+
+Correct Answer.Correct Answer
+Execution Time:1.94
+*/
+class GfG
+{
+void addNode(Node head, int pos, int data)
+	{
+	    Node node = new Node(data);
+	    Node temp = head;
+	    int i=0;
+		while(temp.next!=head && i<pos){
+		    temp=temp.next;
+		    i++;
+		}
+		node.next = temp.next;
+		node.prev = temp;
+		if(temp.next!=null) temp.next.prev = node;
+		temp.next = node;
+	}
+}
