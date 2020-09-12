@@ -1,0 +1,28 @@
+/*
+https://practice.geeksforgeeks.org/problems/insert-in-a-sorted-list/1/
+
+Correct Answer.Correct Answer
+Execution Time:3
+*/
+class Solution {
+    Node sortedInsert(Node head, int key) {
+        Node node = new Node(key);
+        Node temp = head;
+        if(head.data>key){
+            node.next=head;
+            return node;
+        }
+        while(head.next!=null){
+            if(head.next.data>key){
+                node.next = head.next;
+                head.next = node;
+                return temp;
+            }
+            head=head.next;
+        }
+        head.next = node;
+        return temp;
+        
+        
+    }
+}
