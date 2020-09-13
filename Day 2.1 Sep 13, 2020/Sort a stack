@@ -1,0 +1,18 @@
+/*--------------Added Java.util.* for using priorityQueue---------
+
+Correct Answer.Correct Answer
+Execution Time:0.67
+*/
+class GfG{
+	public Stack<Integer> sort(Stack<Integer> s)
+	{
+	   PriorityQueue<Integer> q = new PriorityQueue<Integer>();
+	   while(!s.isEmpty()){
+	        q.add(s.pop());
+	   }
+	   while(!q.isEmpty()){
+	       s.push(q.poll());
+	   }
+	 return s;  
+	}
+}
