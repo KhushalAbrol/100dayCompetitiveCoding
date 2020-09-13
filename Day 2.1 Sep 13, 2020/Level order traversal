@@ -1,0 +1,31 @@
+/*
+https://practice.geeksforgeeks.org/problems/level-order-traversal/1
+
+Correct Answer.Correct Answer
+Execution Time:0.37
+*/
+class Level_order_traversal{
+    static ArrayList<Integer> ordering(Queue<Node> q, ArrayList<Integer> list){
+        Node root = q.poll();
+        if(root==null){
+            if(!q.isEmpty())
+                return ordering(q, list);
+            else
+                return list;
+        }
+        list.add(root.data);
+        q.add(root.left);
+        q.add(root.right);
+        return ordering(q, list);
+    }
+    static ArrayList <Integer> levelOrder(Node root) {
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        Queue<Node> q = new LinkedList<Node>();
+        if(root==null){
+            list.add(-1);
+            return list;
+        }
+        q.add(root);
+        return ordering(q, list);
+    }
+}
