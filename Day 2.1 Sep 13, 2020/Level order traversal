@@ -29,3 +29,29 @@ class Level_order_traversal{
         return ordering(q, list);
     }
 }
+//--------------------------Recursive Sorting
+/*--------------Added Java.util.* for using priorityQueue---------
+
+Correct Answer.Correct Answer
+Execution Time:0.65
+*/
+class GfG{
+    Stack<Integer> insert(Stack<Integer> s, int temp){
+        if(s.isEmpty() || temp> s.peek()){
+            s.push(temp);
+        }else{
+            int e = s.pop();
+            insert(s, temp);
+            s.push(e);
+        }
+        return s;
+    }
+	public Stack<Integer> sort(Stack<Integer> s){
+	   if(!s.isEmpty()){
+    	   int temp = s.pop();
+    	   sort(s);
+    	   insert(s, temp);
+	   }
+	   return s;
+    }
+}
