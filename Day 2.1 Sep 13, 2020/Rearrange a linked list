@@ -1,0 +1,31 @@
+ /*
+   https://practice.geeksforgeeks.org/problems/rearrange-a-linked-list/1
+   
+   Correct Answer.Correct Answer
+    Execution Time:1.93
+   */
+    Node rearrangeEvenOdd(Node head){
+        if(head == null || head.next == null || head.next.next == null) return head;
+        Node oddHead = head;
+        Node odd = head;
+        head= head.next;
+        Node evenHead = head;
+        Node even  = head;
+        head=head.next;
+        int i=1;
+        while(head!=null){
+            if(i%2!=0){
+                odd.next = head;
+                odd = odd.next;
+            }else{
+                even.next = head;
+                even = even.next;
+            }
+            i++;
+            head= head.next;
+        }
+        even.next = null;
+        odd.next = evenHead;
+        return oddHead;
+    }
+}
