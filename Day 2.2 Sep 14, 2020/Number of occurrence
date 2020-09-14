@@ -1,0 +1,32 @@
+//User function Template for Java
+/*Correct Answer.Correct Answer
+Execution Time:0.57*/
+// class Solution {
+//     int count(int[] A, int n, int x) {
+//         int j=0;
+//         for(int i=0;i<n;i++){
+//             if(A[i]==x){
+//                 j++;
+//             }
+//         }
+//         return j;
+//     }
+// }
+
+/*
+Correct Answer.Correct Answer
+Execution Time:0.56
+
+*/
+class Solution {
+    int count(int[] A, int n, int x) {
+        int j=0;
+        for(int i=0;i<n;i++){
+            if(A[i]==x){
+                j++;
+                if(i<n-1 && A[i+1]!=x) break;
+            }
+        }
+        return j;
+    }
+}
