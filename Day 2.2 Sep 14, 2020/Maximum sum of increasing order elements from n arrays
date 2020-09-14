@@ -1,0 +1,47 @@
+/*
+https://practice.geeksforgeeks.org/problems/maximum-sum-of-increasing-order-elements-from-n-arrays/0
+
+Correct Answer.Correct Answer
+Execution Time:0.44
+*/
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class GFG{
+	public static void main (String[] args){
+		Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while(t-->0){
+            int n = sc.nextInt();
+            int m = sc.nextInt();
+            int[][] A = new int[n][m];
+            for(int i=0;i<n;i++){
+                for(int j=0;j<m;j++){
+                    A[i][j]=sc.nextInt();
+                }
+            }
+            boolean found = false;
+            boolean first = true;
+            int max[] = new int[n];
+            int sum =0;
+            for(int i=n-1;i>=0;i--){
+                Arrays.sort(A[i]);
+                found = false;
+                for(int j=m-1; j>=0; j--){
+                    if(first || A[i][j]<max[i+1]){
+                        max[i]=A[i][j];
+                        found = true;
+                        first = false;
+                        break;
+                    } 
+                }
+                if(!found) break;
+            }
+            for(int i=0;i<n;i++){
+                sum+=max[i];
+            }
+            if(!found) System.out.println(0);
+            else System.out.println(sum);
+        }
+	}
+}
