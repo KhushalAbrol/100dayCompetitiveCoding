@@ -1,0 +1,36 @@
+/*
+https://practice.geeksforgeeks.org/problems/ishaan-and-sticks/0/
+
+Correct Answer.Correct Answer
+Execution Time:0.45
+*/import java.util.*;
+import java.lang.*;
+import java.io.*;
+class GFG{
+	public static void main (String[] args){
+		Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while(t-->0){
+            int n = sc.nextInt();
+            int A[] = new int[n];
+            for(int i=0;i<n;i++) A[i] = sc.nextInt();
+            Arrays.sort(A);
+            int square = 0;
+            int maxArea = 0;
+            int sides =1;
+            for(int i=1;i<n;i++){
+                if(A[i]==A[i-1]){
+                    sides++;
+                }else{
+                    sides=1;
+                }
+                if(sides>3){
+                    sides =0;
+                    maxArea = A[i]*A[i];
+                    square++;
+                }
+            }
+            System.out.println(square>0?(maxArea+" "+square):"-1");
+        }
+	}
+}
