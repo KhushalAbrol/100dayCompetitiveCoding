@@ -1,0 +1,27 @@
+/*
+https://practice.geeksforgeeks.org/problems/common-divisor/0/
+
+Correct Answer.Correct Answer
+Execution Time:3.27
+
+*/
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class GFG{
+	public static void main (String[] args){
+		Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while(t-->0){
+            int a = sc.nextInt();
+            int b = sc.nextInt();
+            int x=1;
+            for(int i=2;i<=Math.min(a,b);i++){
+                if(a%i==0 && b%i==0){
+                    x++;
+                }   
+            }
+            System.out.println(x);
+        }
+	}
+}
