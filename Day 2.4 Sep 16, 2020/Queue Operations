@@ -1,0 +1,26 @@
+/*
+https://practice.geeksforgeeks.org/problems/queue-operations/1/
+
+Correct Answer.Correct Answer
+Execution Time:0.26
+*/
+class Geeks{
+    
+    // Function to insert element into the queue
+    static void insert(Queue<Integer> q, int k){
+        q.add(k);
+        
+    }
+    
+    // Function to find frequency of an element
+    // return the frequency of k
+    static int findFrequency(Queue<Integer> q, int k){
+        int x = 0;
+        while(q.contains(k)){
+            q.remove(k);
+            x++;
+        }
+        return x==0?-1:x;
+    }
+    
+}
