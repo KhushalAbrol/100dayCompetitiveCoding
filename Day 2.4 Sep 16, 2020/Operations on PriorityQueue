@@ -1,4 +1,9 @@
-class Geeks{
+/*
+https://practice.geeksforgeeks.org/problems/operations-on-priorityqueue/1
+
+Correct Answer.Correct Answer
+Execution Time:0.36
+*/class Geeks{
     
     // Function to insert element into the queue
     static void insert(PriorityQueue<Integer> q, int k){
