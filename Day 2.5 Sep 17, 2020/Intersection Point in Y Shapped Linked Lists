@@ -1,0 +1,23 @@
+/*
+https://practice.geeksforgeeks.org/problems/intersection-point-in-y-shapped-linked-lists/1
+
+Correct Answer.Correct Answer
+Execution Time:0.97
+*/
+class Intersect
+{
+	int intersectPoint(Node headA, Node headB){
+        Set<Node> h = new HashSet<Node>();
+        while(headA!=null){
+             h.add(headA);
+             headA= headA.next;
+        }
+        while(headB!=null){
+            if(h.contains(headB)){
+                return headB.data;
+            }
+            headB = headB.next;
+        }
+        return -1;
+	}
+}
