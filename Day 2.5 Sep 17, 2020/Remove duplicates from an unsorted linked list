@@ -1,0 +1,24 @@
+/*
+https://practice.geeksforgeeks.org/problems/remove-duplicates-from-an-unsorted-linked-list/1/
+
+Correct Answer.Correct Answer
+Execution Time:2.13
+*/
+class GfG
+{
+    // Function to remove duplicates from the given linked list
+    public Node removeDuplicates(Node head) {
+        Node temp = head;
+        Set<Integer> h = new HashSet<Integer>();
+        h.add(temp.data);
+        while(temp.next!=null){
+            if(h.contains(temp.next.data)){
+                temp.next = temp.next.next;
+            }else{
+                h.add(temp.next.data);
+                temp = temp.next;
+            }
+        }
+        return head;
+    }
+}
