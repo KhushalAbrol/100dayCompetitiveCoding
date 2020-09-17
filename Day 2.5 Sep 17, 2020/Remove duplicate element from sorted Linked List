@@ -18,3 +18,26 @@ class GfG
         return H;
     }
 }
+//----------------------------------------------------------------
+/*
+https://practice.geeksforgeeks.org/problems/remove-duplicate-element-from-sorted-linked-list/1/
+
+Correct Answer.Correct Answer
+Execution Time:1.74
+*/
+class GfG
+{
+    // head: head node
+    Node removeDuplicates(Node head){
+        Node H = head;
+        while(head!=null){
+            Node temp = head;
+            while(temp!=null && head.data==temp.data){
+                 temp = temp.next;
+            }
+            head.next = temp;
+            head = head.next;
+        }
+        return H;
+    }
+}
