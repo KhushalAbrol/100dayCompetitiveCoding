@@ -1,0 +1,24 @@
+/*
+https://practice.geeksforgeeks.org/problems/pairwise-swap-elements-of-a-linked-list-by-swapping-data/1/
+
+Correct Answer.Correct Answer
+Execution Time:1.53
+*/
+class Solution {
+    // Function to pairwise swap elements of a linked list.
+    // It should returns head of the modified list
+    public Node pairwiseSwap(Node head){
+        if(head.next == null) return head;
+        Node H  = head;
+        while(head!=null && head.next!=null){
+            swap(head);
+            head = head.next.next;
+        }
+        return H;
+    }
+    void swap(Node head){
+        int temp = head.data;
+        head.data = head.next.data;
+        head.next.data = temp;
+    }
+}
