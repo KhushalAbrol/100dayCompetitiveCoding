@@ -1,0 +1,38 @@
+/*
+https://practice.geeksforgeeks.org/problems/make-binary-tree/1
+
+Correct Answer.Correct Answer
+Execution Time:1.11
+*/
+class GfG {
+    public static Tree convert(Node head, Tree parent) {
+        Queue<Tree> q = new LinkedList<Tree>();
+        q.add(new Tree(head.data));
+        head = head.next;
+        Tree root=null;
+        if(head==null) {
+            parent = q.poll();
+            root = parent; 
+        }
+        boolean first = true;
+        while(head!=null){
+            parent = q.poll();
+            if(first){
+                root = parent;
+                first = false;
+            }
+            Tree left = left = new Tree(head.data);
+            q.add(left);
+            Tree right = null;
+            head = head.next;
+            if(head!=null){
+                right = new Tree(head.data);
+                q.add(right);
+                head = head.next;
+            }
+            parent.left = left;
+            parent.right = right;
+        }
+        return root;
+    }
+}
