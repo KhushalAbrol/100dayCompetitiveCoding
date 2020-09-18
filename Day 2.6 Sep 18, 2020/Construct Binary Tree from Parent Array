@@ -1,0 +1,25 @@
+/*
+https://practice.geeksforgeeks.org/problems/construct-binary-tree-from-parent-array/1/
+
+Correct Answer.Correct Answer
+Execution Time:3.47
+*/
+class GfG{
+    public static Node createTree(int A[], int n){
+        Map<Integer, Node> m = new HashMap<Integer, Node>();
+        for(int i=0;i<n;i++){
+            Node newNode = new Node(i);
+            m.put(i, newNode);
+        }
+        Node root=null;
+        for(int i=0;i<n;i++){
+            if(A[i]==-1){
+                root = m.get(i);
+            }else{
+                if(m.get(A[i]).left==null) m.get(A[i]).left = m.get(i);
+                else  m.get(A[i]).right = m.get(i);
+            }
+        }
+        return root;
+    }
+}
