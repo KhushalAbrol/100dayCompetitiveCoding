@@ -1,0 +1,41 @@
+/*
+https://practice.geeksforgeeks.org/problems/huffman-decoding/1
+
+
+Your program took more time than expected.Time Limit Exceeded
+Expected Time Limit < 2.596sec
+Hint : Please optimize your code and submit again.
+*/
+class Decode
+{
+    static void fillMap(HashMap<String, Character> h, MinHeapNode root){
+        if(root==null){
+             return;   
+        }
+        if(root.left==null && root.right == null){
+            h.put(Integer.toString(root.freq), root.data);
+            return;
+        }
+        fillMap(h, root.left);
+        fillMap(h, root.right);
+    }
+    static String decodeHuffmanData(MinHeapNode root, String binaryString){
+        HashMap<String, Character> h = new HashMap<String,Character>();
+        fillMap(h, root);
+        String s = "";
+        int x=0;
+        int y=1;
+        int len = binaryString.length();
+        while(y<len){
+            if(h.containsKey(binaryString.substring(x,y))){
+                s+=h.get(binaryString.substring(len-y,len-x));
+                x=y;
+                y++;
+            }else{
+                y++;
+            }
+        }
+        return s;
+    }
+}
+
