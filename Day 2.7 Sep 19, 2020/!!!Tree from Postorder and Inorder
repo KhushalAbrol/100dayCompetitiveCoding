@@ -1,0 +1,52 @@
+/*
+https://practice.geeksforgeeks.org/problems/tree-from-postorder-and-inorder/1/
+
+Wrong Answer. !!!Wrong Answer
+
+Possibly your code doesn't work correctly for multiple test-cases (TCs).
+
+The first test case where your code failed:
+
+Input:
+6
+5 4 6 3 2 1
+5 6 4 3 2 1
+
+Its Correct output is:
+1 2 3 4 5 6
+
+And Your Code's output is:
+1 2 3 6 4 5
+
+*/
+
+class GfG {
+    Node makeChild(int a, int b, int[] in, int[] post, int n){
+        for(int j=b-1;j>=a;j--){
+            for(int i=n-1;i>=0;i--){
+                if(in[j]==post[i]){
+                    // System.out.println("IN[i]:"+in[i]);
+                    Node root = new Node(in[j]);
+                    root.left = makeChild(a, j, in, post, n);
+                    // System.out.println("root.left.data:"+root.data);
+                    root.right = makeChild(j+1, b, in, post, n);
+                    // System.out.println("root.right.data:"+root.right.data+"|a:"+a+"|b:"+b);
+                    return root;
+                }   
+            }
+        }
+        return null;
+    }
+    
+    Node buildTree(int in[], int post[], int n) {   
+        Node root = new Node(post[n-1]);
+        for(int i=0;i<n;i++){
+            if(root.data == in[i]){
+                root.left = makeChild(0, i, in, post, n);
+                root.right = makeChild(i+1, n, in, post, n); 
+                break;
+            }
+        }
+        return root;
+    }
+}
